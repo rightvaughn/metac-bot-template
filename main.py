@@ -672,17 +672,41 @@ if __name__ == "__main__":
     # uncomment and edit to pin specific models.
     template_bot = SummerTemplateBot2026(
         research_reports_per_question=1,
-        predictions_per_research_report=5,
+        predictions_per_research_report=1,
         use_research_summary_to_forecast=False,
         publish_reports_to_metaculus=publish_to_metaculus,
         folder_to_save_reports_to=None,
         skip_previously_forecasted_questions=True,
         extra_metadata_in_explanation=True,
         llms={
-            "default": "openrouter/openai/gpt-5.6-luna",
-            "summarizer": "openrouter/openai/gpt-5.6-luna",
-            "researcher": "openrouter/perplexity/sonar",
-            "parser": "openrouter/openai/gpt-5.6-luna",
+            "default": GeneralLlm(
+                model="groq/openai/gpt-oss-120b",
+                temperature=0.3,
+                max_tokens=2000,
+                timeout=60,
+                allowed_tries=2,
+            ),
+            "summarizer": GeneralLlm(
+                model="groq/openai/gpt-oss-120b",
+                temperature=0.2,
+                max_tokens=1000,
+                timeout=60,
+                allowed_tries=2,
+            ),
+            "researcher": GeneralLlm(
+                model="groq/openai/gpt-oss-120b",
+                temperature=0.2,
+                max_tokens=2000,
+                timeout=60,
+                allowed_tries=2,
+            ),
+            "parser": GeneralLlm(
+                model="groq/openai/gpt-oss-120b",
+                temperature=0,
+                max_tokens=500,
+                timeout=60,
+                allowed_tries=2,
+            ),
         },
     )
 
