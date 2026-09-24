@@ -679,10 +679,10 @@ if __name__ == "__main__":
         skip_previously_forecasted_questions=True,
         extra_metadata_in_explanation=True,
         llms={
-            "default": "openrouter/openai/gpt-6-astra",
-            "summarizer": "openrouter/openai/gpt-6-astra",
-            "researcher": "openrouter/openai/gpt-6-astra",
-            "parser": "openrouter/openai/gpt-6-astra",
+            "default": "openrouter/openai/gpt-5.6-luna",
+"summarizer": "openrouter/openai/gpt-5.6-luna",
+"researcher": "openrouter/openai/gpt-5.6-luna",
+"parser": "openrouter/openai/gpt-5.6-luna",
         },
     )
 
