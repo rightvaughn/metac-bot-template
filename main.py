@@ -680,9 +680,9 @@ if __name__ == "__main__":
         extra_metadata_in_explanation=True,
         llms={
             "default": "openrouter/openai/gpt-5.6-luna",
-"summarizer": "openrouter/openai/gpt-5.6-luna",
-"researcher": "openrouter/openai/gpt-5.6-luna",
-"parser": "openrouter/openai/gpt-5.6-luna",
+            "summarizer": "openrouter/openai/gpt-5.6-luna",
+            "researcher": "openrouter/perplexity/sonar",
+            "parser": "openrouter/openai/gpt-5.6-luna",
         },
     )
 
